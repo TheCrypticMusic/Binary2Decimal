@@ -34,4 +34,16 @@ class Converter:
             remainder = num % 2
             num //= 2
             binary.append(str(remainder))
+        binary.reverse()
         return "".join(binary)
+
+
+if __name__ == "__main__":
+    user_conversion_type = input("'Binary'|'Decimal'\nEnter the format you"
+                                 " want to convert to:\n>>> ")
+    if user_conversion_type == 'Decimal':
+        user_number = input("Please enter a Binary number\n>>> ")
+    else:
+        user_number = input("Please enter a Decimal number\n>>> ")
+    user_convert = Converter()
+    print(user_convert.convert(user_number, user_conversion_type))
